@@ -11,9 +11,9 @@ setup(
     packages=find_packages(where="src"),
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/ArjanCodes/2023-package",
+    url="https://github.com/shemla/clearly_confused",
     author="shemla",
-    author_email="ori.a.shemla@gmail.com",
+    author_email="",
     license="MIT",
     classifiers=[
         "License :: OSI Approved :: MIT License",
