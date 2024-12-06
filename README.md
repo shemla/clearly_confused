@@ -2,10 +2,10 @@
 A python confusion matrix plotter, displayed as a treemap
 
 ![binary label, sorted alphabetically](https://github.com/shemla/clearly_confused/blob/main/assets/binary_label_sorted_by_label.PNG?raw=true)
-'
+'''
     df = pd.DataFrame(data=[[1,1],[0,1],[1,0],[0,0],[0,0],[1,1],[1,0]], columns = ['Label','Prediction'])
     plot_cm(df,'Label','Prediction',sort_by_label=True)
-'
+'''
 
 A confusion matrix is a table that is used to define the performance of a classification algorithm. A confusion matrix visualizes and summarizes the performance of a classification algorithm.
 The old way of displaying a confusion matrix is as a simple table, usually with cells colored as a heatmap to note amount of items in each predictive group. The rows indicated actual labels, and the columns indicate inferred predictions of the items with these labels.
@@ -25,27 +25,27 @@ Based on the horizontal axis, we can see that:
 2. Approximately 33% of those labeled 0 are misidentified as 1, and the rest are identified correctly as 0.
 
 ![binary_label](https://github.com/shemla/clearly_confused/blob/main/assets/binary_label.PNG?raw=true)
-'
+'''
     df = pd.DataFrame(data=[[1,1],[0,1],[1,0],[0,0],[0,0],[1,1],[1,0]], columns = ['Label','Prediction'])
     plot_cm(df,'Label','Prediction')
-'
+'''
 
 The same logic holds if we wish to evaluate a model classifying data to categorical labels, with more than 2 categories:
 
 ![categorical_label](https://github.com/shemla/clearly_confused/blob/main/assets/categorical_label.PNG?raw=true)
-'
+'''
     df = pd.DataFrame(data=[['Car','Bus'],['Bus','Bus'],['Car','Car'],['Bus','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Bike','Bike'],['Bus','Car']],
         columns = ['Label','Prediction'])
     plot_cm(df,'Label','Prediction')
-'
+'''
 
 Notice than the confusion matrix is sorted by default based on the amount of items for each label. 
 If you'd like to have the items sort by label value (in ordinal labels for instance, or sorted alphabetically by categories), set 'sort_by_label' to be True.
 
 ![categorical_label sorted alphabetically](https://github.com/shemla/clearly_confused/blob/main/assets/categorical_label_sorted_by_label.PNG?raw=true)
-'
+'''
     df = pd.DataFrame(data=[['Car','Bus'],['Bus','Bus'],['Car','Car'],['Bus','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Bike','Bike'],['Bus','Car']],
         columns = ['Label','Prediction'])
     plot_cm(df,'Label','Prediction', sort_by_label=True)
-'
+'''
 
