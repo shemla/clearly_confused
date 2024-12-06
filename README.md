@@ -1,14 +1,11 @@
-# clearly_confused
+# Clearly Confused
 A python confusion matrix plotter, displayed as a treemap. 
 
-```python
-    df = pd.DataFrame(data=[[1,1],[0,1],[1,0],[0,0],[0,0],[1,1],[1,0]], columns = ['Label','Prediction'])
-    plot_cm(df,'Label','Prediction',sort_by_label=True)
-```
 <p align="center" width="100%">
-    <img src="https://github.com/shemla/clearly_confused/blob/main/assets/binary_label_sorted_by_label.PNG" alt="binary label, sorted alphabetically">
+    <img src="https://github.com/shemla/clearly_confused/blob/main/assets/binary_label.PNG" alt="binary label">
 </p>
-# Getting stated
+
+# Quick start
 A confusion matrix is a table that is used to define the performance of a classification algorithm. A confusion matrix visualizes and summarizes the performance of a classification algorithm.
 The old way of displaying a confusion matrix is as a simple table, usually with cells colored as a heatmap to note amount of items in each predictive group. The rows indicated actual labels, and the columns indicate inferred predictions of the items with these labels.
 
@@ -16,7 +13,7 @@ The old way of displaying a confusion matrix is as a simple table, usually with 
     <img src="https://github.com/shemla/clearly_confused/blob/main/assets/cm_old.png" alt="confusion matrix">
 </p>
 
-## Install
+## Installation
 No installation is required. simply clone the repository and include the following line in the begining of your code:
 ```python
     from clearly_confussed import plot_cm
@@ -72,5 +69,5 @@ If you'd like to have the items sort by label value (in ordinal labels for insta
 </p>
 
 
-That's it!
+## That's it!
 Hopefully you're no longer confused ;-)
