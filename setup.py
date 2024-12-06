@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-with open("app/README.md", "r") as f:
+with open("README.md", "r") as f:
     long_description = f.read()
 
 setup(
@@ -22,8 +22,8 @@ setup(
     ],
     install_requires=[
         "pandas >= 2.2.3",
-        "numpy >= 2.1.3"
-        "matplotlib >= 3.9.3"
+        "numpy >= 2.1.3",
+        "matplotlib >= 3.9.3",
         ],
     extras_require={
         "dev": [],
