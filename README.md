@@ -12,7 +12,7 @@ A python confusion matrix plotter, displayed as a treemap
 A confusion matrix is a table that is used to define the performance of a classification algorithm. A confusion matrix visualizes and summarizes the performance of a classification algorithm.
 The old way of displaying a confusion matrix is as a simple table, usually with cells colored as a heatmap to note amount of items in each predictive group. The rows indicated actual labels, and the columns indicate inferred predictions of the items with these labels.
 
-![confusion matrix](https://github.com/shemla/clearly_confused/blob/main/assets/cm_old.PNG?raw=true)
+![confusion matrix](https://github.com/shemla/clearly_confused/blob/main/assets/cm_old.png?raw=true)
 
 ## Install
 No instalation is required. simply clone the repository and 
