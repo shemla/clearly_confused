@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-def plot_cm(df: pd.DataFrame, label: str, prediction: str, ax=None):
+def plot_cm(df: pd.DataFrame, label: str, prediction: str, sort_by_label: bool=False, ax=None):
     '''
     plot_confusion_matrix(df: pd.DataFrame, label: str, prediction: str, ax=None)
 
@@ -13,10 +13,12 @@ def plot_cm(df: pd.DataFrame, label: str, prediction: str, ax=None):
     Input:
         df: pd.DataFrame 
             A dataframe with a column with labels and a column with predictions.
-        label: str
+        label: string
             Column name for the column containing the labels values in df.
-        prediction: str
+        prediction: string
             Column name for the column containing the prediction values in df.
+        sort_by_label: boolean, optional
+            If sort_by_label is True, the plot boxes are sorted by alphabetical order, rather than by amount of labels (default).
         ax: matplotlib axes, optional
             Axes to plot on. If None, the function creates a new figure.
     
@@ -48,6 +50,8 @@ def plot_cm(df: pd.DataFrame, label: str, prediction: str, ax=None):
     # prepare df and get a list of unique values, sorted by presencre in the label column
     df1=df[[label,prediction]].dropna().copy()
     vc_lbl = df1[label].value_counts()
+    if sort_by_label:
+        vc_lbl = vc_lbl.sort_index()
     vc_lbl_p = vc_lbl/df1.shape[0]*100
     unique_vals = vc_lbl_p.index.to_list()
     
@@ -63,6 +67,8 @@ def plot_cm(df: pd.DataFrame, label: str, prediction: str, ax=None):
         vc_pred = df1.loc[df1[label]==lbl,prediction].value_counts().to_frame()
         vc_pred['Label count'] = [vc_lbl[pred] if pred in vc_lbl.index else 0 for pred in vc_pred.index]
         vc_pred = vc_pred.sort_values(by='Label count', ascending=False)['count']
+        if sort_by_label:
+            vc_pred = vc_pred.sort_index()
         vc_pred_p = vc_pred/vc_lbl[lbl]*100
         
         # geometric rectangles coordinates
