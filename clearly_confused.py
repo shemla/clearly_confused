@@ -75,8 +75,7 @@ def plot_cm(df: pd.DataFrame, label: str, prediction: str, ax=None):
         # add text to the boxes
         for x_range,pred in zip(x_ranges,[val for val in unique_vals if val in vc_pred_p.index]):
             txt_pad = int(np.floor(len(f'{lbl} -> {pred}')/2-len(f'{vc_pred[pred]}')/2))+1
-            txt_pad_str=''.join([' ' for k in range(txt_pad)])
-            label_to_pred_str  = f'{lbl} -> {pred}\n{txt_pad_str}{vc_pred[pred]}'
+            label_to_pred_str  = f'{lbl} -> {pred}\n{vc_pred[pred]}'
             ax.text(x=x_range[0]+x_range[1]/2,y=y_range[0]+y_range[1]/2,s=label_to_pred_str, horizontalalignment='center', verticalalignment='center')
     
     # set final figure descriptive characteristics
