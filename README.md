@@ -14,9 +14,14 @@ The old way of displaying a confusion matrix is as a simple table, usually with 
 </p>
 
 ## Installation
-No installation is required. simply clone the repository and include the following line in the begining of your code:
+To install with pip, run the following command in the terminal:
+```
+pip install git+https://github.com/shemla/clearly_confused.git@main
+```
+
+And include the following line in the begining of your code:
 ```python
-    from clearly_confussed import plot_cm
+from clearly_confussed import plot_cm
 ``` 
 
 ## Binary labels
@@ -33,8 +38,8 @@ Based on the horizontal axis, we can see that:
 2. Approximately 33% of those labeled 0 are misidentified as 1, and the rest are identified correctly as 0.
 
 ```python
-    df = pd.DataFrame(data=[[1,1],[0,1],[1,0],[0,0],[0,0],[1,1],[1,0]], columns = ['Label','Prediction'])
-    plot_cm(df,'Label','Prediction')
+df = pd.DataFrame(data=[[1,1],[0,1],[1,0],[0,0],[0,0],[1,1],[1,0]], columns = ['Label','Prediction'])
+plot_cm(df,'Label','Prediction')
 ```
 
 <p align="center" width="100%">
@@ -45,9 +50,9 @@ Based on the horizontal axis, we can see that:
 The same logic holds if we wish to evaluate a model classifying data to categorical labels, with more than 2 categories:
 
 ```python
-    df = pd.DataFrame(data=[['Car','Bus'],['Bus','Bus'],['Car','Car'],['Bus','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Bike','Bike'],['Bus','Car']],
-        columns = ['Label','Prediction'])
-    plot_cm(df,'Label','Prediction')
+df = pd.DataFrame(data=[['Car','Bus'],['Bus','Bus'],['Car','Car'],['Bus','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Bike','Bike'],['Bus','Car']],
+    columns = ['Label','Prediction'])
+plot_cm(df,'Label','Prediction')
 ```
 
 <p align="center" width="100%">
@@ -59,9 +64,9 @@ Notice than the confusion matrix is sorted by default based on the amount of ite
 If you'd like to have the items sort by label value (in ordinal labels for instance, or sorted alphabetically by categories), set 'sort_by_label' to be True.
 
 ```python
-    df = pd.DataFrame(data=[['Car','Bus'],['Bus','Bus'],['Car','Car'],['Bus','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Bike','Bike'],['Bus','Car']],
-        columns = ['Label','Prediction'])
-    plot_cm(df,'Label','Prediction', sort_by_label=True)
+df = pd.DataFrame(data=[['Car','Bus'],['Bus','Bus'],['Car','Car'],['Bus','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Bike','Bike'],['Bus','Car']],
+    columns = ['Label','Prediction'])
+plot_cm(df,'Label','Prediction', sort_by_label=True)
 ```
 
 <p align="center" width="100%">
