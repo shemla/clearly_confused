@@ -98,10 +98,10 @@ def plot_cm(df: pd.DataFrame, label: str, prediction: str, sort_by_label: bool=F
 
 if __name__ == '__main__':
     df = pd.DataFrame(data=[[1,1],[0,1],[1,0],[0,0],[0,0],[1,1],[1,0]], columns = ['Label','Prediction'])
-    plot_cm(df,'Label','Prediction')
+    plot_cm(df,'Label','Prediction',sort_by_label=True)
 
     df = pd.DataFrame(data=[['Car','Bus'],['Bus','Bus'],['Car','Car'],['Bus','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Bike','Bike'],['Bus','Car']] ,columns = ['Label','Prediction'])
-    plot_cm(df,'Label','Prediction')
+    plot_cm(df,'Label','Prediction',sort_by_label=True)
 
 
 
