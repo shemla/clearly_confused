@@ -60,3 +60,5 @@ If you'd like to have the items sort by label value (in ordinal labels for insta
 ![categorical_label sorted alphabetically](https://github.com/shemla/clearly_confused/blob/main/assets/categorical_label_sorted_by_label.PNG?raw=true)
 
 
+That's it!
+Hopefully you're no longer confused ;-)
