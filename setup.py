@@ -22,7 +22,6 @@ setup(
     ],
     install_requires=[
         "pandas >= 2.2.3",
-        "numpy >= 2.1.3",
         "matplotlib >= 3.9.3",
         ],
     extras_require={

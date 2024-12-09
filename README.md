@@ -38,8 +38,8 @@ Based on the horizontal axis, we can see that:
 2. Approximately 33% of those labeled 0 are misidentified as 1, and the rest are identified correctly as 0.
 
 ```python
-df = pd.DataFrame(data=[[1,1],[0,1],[1,0],[0,0],[0,0],[1,1],[1,0]], columns = ['Label','Prediction'])
-plot_cm(df,'Label','Prediction')
+df_binary = pd.DataFrame(data=[[1,1],[0,1],[1,0],[0,0],[0,0],[1,1],[1,0]], columns = ['Label','Prediction'])
+plot_cm(df_binary,'Label','Prediction')
 ```
 
 <p align="center" width="100%">
@@ -50,9 +50,9 @@ plot_cm(df,'Label','Prediction')
 The same logic holds if we wish to evaluate a model classifying data to categorical labels, with more than 2 categories:
 
 ```python
-df = pd.DataFrame(data=[['Car','Bus'],['Bus','Bus'],['Car','Car'],['Bus','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Bike','Bike'],['Bus','Car']],
+df_categorical = pd.DataFrame(data=[['Car','Bus'],['Bus','Bus'],['Car','Car'],['Bus','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Bike','Bike'],['Bus','Car']],
     columns = ['Label','Prediction'])
-plot_cm(df,'Label','Prediction')
+plot_cm(df_categorical,'Label','Prediction')
 ```
 
 <p align="center" width="100%">
@@ -64,9 +64,7 @@ Notice than the confusion matrix is sorted by default based on the amount of ite
 If you'd like to have the items sort by label value (in ordinal labels for instance, or sorted alphabetically by categories), set 'sort_by_label' to be True.
 
 ```python
-df = pd.DataFrame(data=[['Car','Bus'],['Bus','Bus'],['Car','Car'],['Bus','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Car','Car'],['Bike','Car'],['Bike','Bus'],['Bike','Bike'],['Bus','Car']],
-    columns = ['Label','Prediction'])
-plot_cm(df,'Label','Prediction', sort_by_label=True)
+plot_cm(df_categorical,'Label','Prediction', alphabetical_sort=True)
 ```
 
 <p align="center" width="100%">
