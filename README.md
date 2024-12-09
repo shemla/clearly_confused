@@ -37,6 +37,7 @@ Based on the horizontal axis, we can see that:
 1. Approximately 50% of those labeled 1 are identified as such, and the rest are misidentified as 0.
 2. Approximately 33% of those labeled 0 are misidentified as 1, and the rest are identified correctly as 0.
 
+
 ```python
 df_binary = pd.DataFrame(data=[[1,1],[0,1],[1,0],[0,0],[0,0],[1,1],[1,0]], columns = ['Label','Prediction'])
 plot_cm(df_binary,'Label','Prediction')
@@ -44,6 +45,17 @@ plot_cm(df_binary,'Label','Prediction')
 
 <p align="center" width="100%">
     <img src="https://github.com/shemla/clearly_confused/blob/main/assets/binary_label.PNG" alt="binary labels">
+</p>
+
+## Orientation
+The default orientation is horizontal, and it is optimal for assesing a model's precision. If you'd like to have a plot optimal for assesing a model's recall, set orientation input to 'v' to have a vertical orientation.
+
+```python
+plot_cm(df_binary,'Label','Prediction', orientation='v')
+```
+
+<p align="center" width="100%">
+    <img src="https://github.com/shemla/clearly_confused/blob/main/assets/categorical_label.PNG" alt="categorical labels">
 </p>
 
 ## Categorical labels
@@ -61,7 +73,7 @@ plot_cm(df_categorical,'Label','Prediction')
 
 ## Sorting
 Notice than the confusion matrix is sorted by default based on the amount of items for each label. 
-If you'd like to have the items sort by label value (in ordinal labels for instance, or sorted alphabetically by categories), set 'sort_by_label' to be True.
+If you'd like to have the items sorted alphabetically or ordinally, set 'alphabetical_sort' to be True.
 
 ```python
 plot_cm(df_categorical,'Label','Prediction', alphabetical_sort=True)
