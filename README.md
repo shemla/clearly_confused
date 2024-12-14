@@ -55,7 +55,7 @@ plot_cm(df_binary,'Label','Prediction', orientation='v')
 ```
 
 <p align="center" width="100%">
-    <img src="https://github.com/shemla/clearly_confused/blob/main/assets/categorical_label.PNG" alt="categorical labels">
+    <img src="https://github.com/shemla/clearly_confused/blob/develop/assets/binary_label_vertical.PNG" alt="binary labels vertical orientation">
 </p>
 
 ## Categorical labels
